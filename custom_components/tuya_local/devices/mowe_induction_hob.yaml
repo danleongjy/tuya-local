@@ -1,0 +1,163 @@
+name: Stove
+products:
+  - id: i6qpkzm123tvw3a2
+    manufacturer: Mowe
+    model: MW278I
+    name: Induction Hob
+entities:
+  - entity: switch
+    translation_key: power
+    dps:
+      - id: 101
+        name: switch
+        type: boolean
+  - entity: select
+    translation_key: current_burner
+    dps:
+      - id: 102
+        name: option
+        type: integer
+        mapping:
+          - dps_val: "0"
+            value: Left
+          - dps_val: "1"
+            value: Right
+  - entity: number
+    translation_key: current_burner_power
+    dps:
+      - id: 103
+        name: value
+        type: string
+        mapping:
+          - dps_val: "0"
+            value: 0
+          - dps_val: "1"
+            value: 1
+          - dps_val: "2"
+            value: 2
+          - dps_val: "3"
+            value: 3
+          - dps_val: "4"
+            value: 4
+          - dps_val: "5"
+            value: 5
+          - dps_val: "6"
+            value: 6
+          - dps_val: "7"
+            value: 7
+          - dps_val: "8"
+            value: 8
+          - dps_val: "9"
+            value: 9
+  - entity: switch
+    translation_key: boost
+    dps:
+      - id: 104
+        name: switch
+        type: boolean
+  - entity: switch
+    translation_key: keep_warm
+    dps:
+      - id: 105
+        name: switch
+        type: boolean
+  - entity: switch
+    translation_key: pause
+    dps:
+      - id: 106
+        name: switch
+        type: boolean
+  - entity: number
+    translation_key: timer
+    class: duration
+    dps:
+      - id: 107
+        name: value
+        unit: min
+        type: integer
+        range:
+          min: 0
+          max: 99
+  - entity: sensor
+    translation_key: current_session_duration
+    class: duration
+    dps:
+      - id: 108
+        name: sensor
+        unit: h
+        type: integer
+        scale: 0.01
+        range:
+          min: 0
+          max: 999
+  - entity: sensor
+    translation_key: current_session_power_consumption
+    class: energy
+    dps:
+      - id: 109
+        name: sensor
+        unit: kWh
+        type: integer
+        scale: 0.01
+        range:
+          min: 0
+          max: 999
+  - entity: sensor
+    translation_key: total_duration
+    class: duration
+    dps:
+      - id: 110
+        name: sensor
+        unit: h
+        type: integer
+        scale: 0.01
+        range:
+          min: 0
+          max: 99999
+  - entity: sensor
+    translation_key: total_power_consumption
+    class: duration
+    dps:
+      - id: 111
+        name: sensor
+        unit: kWh
+        type: integer
+        scale: 0.01
+        range:
+          min: 0
+          max: 99999
+  - entity: sensor
+    translation_key: error_code
+    dps:
+      - id: 120
+        name: sensor
+        type: string
+        mapping:
+          - dps_val: "0"
+            value: None
+          - dps_val: "1"
+            value: "1"
+          - dps_val: "2"
+            value: "2"
+          - dps_val: "3"
+            value: "3"
+          - dps_val: "4"
+            value: "4"
+          - dps_val: "5"
+            value: "No pot on stove"
+          - dps_val: "6"
+            value: "Hot surface"
+          - dps_val: "7"
+            value: "7"
+          - dps_val: "8"
+            value: "8"
+          - dps_val: "9"
+            value: "9"
+          - dps_val: "10"
+            value: "10"
+          - dps_val: "11"
+            value: "11"
+          - dps_val: "12"
+            value: "12"
+          - dps_val: "13"
+            value: "13"
