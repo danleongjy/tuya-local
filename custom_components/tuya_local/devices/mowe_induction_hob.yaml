@@ -6,13 +6,13 @@ products:
     name: Induction Hob
 entities:
   - entity: switch
-    translation_key: power
+    name: Main Power
     dps:
       - id: 101
         name: switch
         type: boolean
   - entity: select
-    translation_key: current_burner
+    name: Current Burner
     dps:
       - id: 102
         name: option
@@ -23,7 +23,9 @@ entities:
           - dps_val: "1"
             value: Right
   - entity: number
-    translation_key: current_burner_power
+    name: Current Burner Power
+    minimum: 0
+    maximum: 9
     dps:
       - id: 103
         name: value
@@ -50,25 +52,25 @@ entities:
           - dps_val: "9"
             value: 9
   - entity: switch
-    translation_key: boost
+    name: Boost
     dps:
       - id: 104
         name: switch
         type: boolean
   - entity: switch
-    translation_key: keep_warm
+    name: Keep Warm
     dps:
       - id: 105
         name: switch
         type: boolean
   - entity: switch
-    translation_key: pause
+    name: Pause
     dps:
       - id: 106
         name: switch
         type: boolean
   - entity: number
-    translation_key: timer
+    name: Current Burner Timer
     class: duration
     dps:
       - id: 107
@@ -79,31 +81,7 @@ entities:
           min: 0
           max: 99
   - entity: sensor
-    translation_key: current_session_duration
-    class: duration
-    dps:
-      - id: 108
-        name: sensor
-        unit: h
-        type: integer
-        scale: 0.01
-        range:
-          min: 0
-          max: 999
-  - entity: sensor
-    translation_key: current_session_power_consumption
-    class: energy
-    dps:
-      - id: 109
-        name: sensor
-        unit: kWh
-        type: integer
-        scale: 0.01
-        range:
-          min: 0
-          max: 999
-  - entity: sensor
-    translation_key: total_duration
+    name: Total Time Used
     class: duration
     dps:
       - id: 110
@@ -115,7 +93,7 @@ entities:
           min: 0
           max: 99999
   - entity: sensor
-    translation_key: total_power_consumption
+    name: Total Power Consumed
     class: duration
     dps:
       - id: 111
@@ -127,7 +105,7 @@ entities:
           min: 0
           max: 99999
   - entity: sensor
-    translation_key: error_code
+    name: Error Code
     dps:
       - id: 120
         name: sensor
